@@ -14,14 +14,18 @@ export default async function Posts() {
   const lista: Post[] = await res.json()
 
   return (
-    <ul>
-      {lista.map((p) => (
-        <li key={p.id}>
-          <Link href={`/posts/${p.id}`}>
-            {p.title}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <main>
+      <h1>Posts</h1>
+
+      <ul>
+        {lista.map((p) => (
+          <li key={p.id}>
+            <Link href={`/posts/${p.id}`}>
+              {p.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </main>
   )
 }
